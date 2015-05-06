@@ -14,11 +14,13 @@ public class Program {
 				println("You typed start");
 			} else if (input.equals("instructions")) {
 				println("You typed instructions");
-			} else if (input.equals("exit")) {
+			} else if (input.equals("exit") || input.equals("quit")) {
 				running = false;
 				println("Goodbye.");
 			} else if (input.equals("help")) {
 				showHelp();
+			} else if (input.equals("list")) {
+				showList();
 			} else {
 				println("Unknown command.");
 			}
@@ -27,10 +29,15 @@ public class Program {
 	
 	public static void showHelp() {
 		showMenu("HELP", 20);
+		println("You can type list to see the avaliable commands.");
+	}
+	
+	public static void showList() {
 		println("start - begin the test.");
 		println("instructions - show test instructions.");
 		println("help - see help menu.");
 		println("exit - exit the program.");
+		println("quit - same as exit.");
 	}
 	
 	public static String getInput(String prompt) {
